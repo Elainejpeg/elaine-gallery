@@ -30,7 +30,7 @@ The source data is reused with attribution under [CC BY 4.0](https://creativecom
 
 ## Project structure
 
-\`\`\`text
+```text
 steam-game-analysis/
 ├── README.md
 ├── DATA_SOURCE.md
@@ -43,33 +43,33 @@ steam-game-analysis/
 │   ├── 02_import_sqlite.R
 │   └── 03_queries.sql
 └── .gitignore
-\`\`\`
+```
 
 ## Run the analysis (R / RStudio)
 
 1. Download this folder and open it as your working directory in RStudio.
 2. In the R console, install packages **once**:
 
-\`\`\`r
+```r
 install.packages(c("readr", "dplyr", "ggplot2", "DBI", "RSQLite"))
-\`\`\`
+```
 
 3. Run from the **steam-game-analysis** folder:
 
-\`\`\`r
+```r
 source("scripts/01_analysis.R")
-\`\`\`
+```
 
-4. Open the generated files in \`outputs/\`: cleaned data, summary tables, a descriptive note, and three PNG plots.
+4. Open the generated files in `outputs/`: cleaned data, summary tables, a descriptive note, and three PNG plots.
 
-**Optional SQL practice:** run \`source("scripts/02_import_sqlite.R")\`, then open the generated \`outputs/steam_games.sqlite\` in a SQLite viewer and execute \`scripts/03_queries.sql\`.
+**Optional SQL practice:** run `source("scripts/02_import_sqlite.R")`, then open the generated `outputs/steam_games.sqlite` in a SQLite viewer and execute `scripts/03_queries.sql`.
 
-If R cannot find \`data/steam_sample.csv\`, your working directory is incorrect. In RStudio, use **Session → Set Working Directory → Choose Directory**, then select this folder.
+If R cannot find `data/steam_sample.csv`, your working directory is incorrect. In RStudio, use **Session → Set Working Directory → Choose Directory**, then select this folder.
 
 ## What the R analysis does
 
 1. Reads the CSV and checks the expected columns.
-2. Converts numeric columns, checks invalid values, and creates \`total_reviews\`, \`positive_share\`, and \`primary_genre\`.
+2. Converts numeric columns, checks invalid values, and creates `total_reviews`, `positive_share`, and `primary_genre`.
 3. Draws a genre count chart, price-versus-rating scatterplot, and free/paid rating share comparison.
 4. Saves summary CSV files and notes explaining the sample limitations.
 
